@@ -7,5 +7,5 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:${KEYCLOAK_PORT_HOST:28080}/auth/realms/realm1st
-          jwk-set-uri: http://localhost:${KEYCLOAK_PORT_HOST:28080}/auth/realms/realm1st/protocol/openid-connect/certs
+          issuer-uri: http://localhost:${KEYCLOAK_PORT_HOST:28080}/auth/realms/realm2nd
+          jwk-set-uri: http://localhost:${KEYCLOAK_PORT_HOST:28080}/auth/realms/realm2nd/protocol/openid-connect/certs
