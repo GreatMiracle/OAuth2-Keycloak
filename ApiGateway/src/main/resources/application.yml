@@ -14,3 +14,24 @@ spring:
           filters:
 #            - StripPrefix=1
             - RemoveRequestHeader=Cookie
+        - id: albums
+          uri: http://localhost:8092
+          predicates:
+            - Path=/albums
+            - Method=GET
+          filters:
+            - RemoveRequestHeader=Cookie
+        - id: photos
+          uri: http://localhost:8093
+          predicates:
+            - Path=/photos
+            - Method=GET
+          filters:
+            - RemoveRequestHeader=Cookie
+#        - id: photos
+#          uri: http://localhost:8093
+#          predicates:
+#            - Path=/photos/albums/:albumId
+#            - Method=GET
+#          filters:
+#            - RemoveRequestHeader=Cookie

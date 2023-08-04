@@ -1,0 +1,649 @@
+{
+	"info": {
+		"_postman_id": "de5ed3c7-3b78-46a1-9c7c-6829a88751b6",
+		"name": "OAuth2-KeyCloack",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27820020"
+	},
+	"item": [
+		{
+			"name": "resource-server",
+			"item": [
+				{
+					"name": "get user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/users/status/check",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"users",
+								"status",
+								"check"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user post-authorize",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/users/post-authorize/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"users",
+								"post-authorize",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "b366c220-1aac-44c3-ab53-bca89e839b7a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user secured",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/users/secured/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"users",
+								"secured",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "13c0eb7e-774d-4e3c-aea9-4050afe73e64"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user pre-authorize",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/users/pre-authorize/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"users",
+								"pre-authorize",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "dev"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get token object",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/token/jwt",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"token",
+								"jwt"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GateWay",
+			"item": [
+				{
+					"name": "get user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8091/users/status/check",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"users",
+								"status",
+								"check"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get albums",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8091/albums",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"albums"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get photo of album",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8091/photos/albums/:albumId",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"photos",
+								"albums",
+								":albumId"
+							],
+							"variable": [
+								{
+									"key": "albumId",
+									"value": "albumIdHere"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all photos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8091/photos",
+							"host": [
+								"localhost"
+							],
+							"port": "8091",
+							"path": [
+								"photos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Album",
+			"item": [
+				{
+					"name": "get albums",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8092/albums",
+							"host": [
+								"localhost"
+							],
+							"port": "8092",
+							"path": [
+								"albums"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Photo",
+			"item": [
+				{
+					"name": "get all photos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8093/photos",
+							"host": [
+								"localhost"
+							],
+							"port": "8093",
+							"path": [
+								"photos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get photo of album",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8093/photos/albums/:albumId",
+							"host": [
+								"localhost"
+							],
+							"port": "8093",
+							"path": [
+								"photos",
+								"albums",
+								":albumId"
+							],
+							"variable": [
+								{
+									"key": "albumId",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "access_token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.environment.set(\"access_token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "authorization_code",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "client2nd",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "cd3c27ac-983a-48cc-8e94-faf383e27a6d",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "code",
+							"value": "b2a1d341-852d-49db-ac3e-2c054d21ce7e.d0c83f2a-123d-4a82-9af8-723dd69b736e.3b419c90-04a5-42c5-acf2-414549f9d7e5",
+							"type": "text"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://localhost:3000",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "openid kien",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "0biRVsIOjzEUvyuePV0yHls5G9EZyK2w",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:28080/auth/realms/:realmname/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "28080",
+					"path": [
+						"auth",
+						"realms",
+						":realmname",
+						"protocol",
+						"openid-connect",
+						"token"
+					],
+					"variable": [
+						{
+							"key": "realmname",
+							"value": "realm2nd"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get code realm",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:28080/auth/realms/realm2nd/protocol/openid-connect/auth?client_id=client2nd&response_type=code&redirect_uri=http://localhost:3000&scope=openid kien&state=hryd6lfyY4Khyr",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "28080",
+					"path": [
+						"auth",
+						"realms",
+						"realm2nd",
+						"protocol",
+						"openid-connect",
+						"auth"
+					],
+					"query": [
+						{
+							"key": "client_id",
+							"value": "client2nd"
+						},
+						{
+							"key": "response_type",
+							"value": "code"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://localhost:3000"
+						},
+						{
+							"key": "scope",
+							"value": "openid kien"
+						},
+						{
+							"key": "state",
+							"value": "hryd6lfyY4Khyr"
+						},
+						{
+							"key": "code",
+							"value": "95a40cde-33fb-4d6b-86c8-7429884c75ee.1a1ff299-4a9e-4066-8c23-41656ab5fedf.386d5d53-9b29-40ad-8917-16c4eb6440af",
+							"disabled": true
+						},
+						{
+							"key": "code_change_method",
+							"value": "S256",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.environment.set(\"access_token\", jsonData.access_token);",
+							"pm.variables.get(\"access_token\");",
+							"console.log(pm.variables.get(\"access_token\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "client2nd",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "0biRVsIOjzEUvyuePV0yHls5G9EZyK2w",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "openid",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:28080/auth/realms/realm2nd/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "28080",
+					"path": [
+						"auth",
+						"realms",
+						"realm2nd",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

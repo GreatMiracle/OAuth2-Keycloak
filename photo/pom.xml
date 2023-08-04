@@ -8,10 +8,10 @@
 		<version>3.1.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.oauth2.keycloak</groupId>
-	<artifactId>resource-server</artifactId>
+	<groupId>com.oauth2.resource</groupId>
+	<artifactId>photo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>resource-server</name>
+	<name>photo</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
@@ -48,7 +48,7 @@
 			<scope>test</scope>
 		</dependency>
 
-<!--		start security-->
+		<!--		start security-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
@@ -59,7 +59,8 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-<!--		end security-->
+		<!--		end security-->
+
 	</dependencies>
 
 	<build>

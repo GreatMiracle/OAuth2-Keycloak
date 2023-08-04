@@ -1,6 +1,6 @@
 package com.oauth2.keycloak.resourceserver.controller;
 
-import com.oauth2.keycloak.resourceserver.dto.response.UserRest;
+import com.oauth2.common.library.dto.response.UserRest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
@@ -38,7 +38,7 @@ public class UsersController {
     @PostAuthorize("returnObject.body.userId == #jwt.subject")
     @GetMapping("/post-authorize/{userId}")
     public ResponseEntity<UserRest> getUserPostAuthorize(@PathVariable String userId, @AuthenticationPrincipal Jwt jwt) {
-        return new ResponseEntity<>(new UserRest("OK", "iFegal","13c0eb7e-774d-4e3c-aea9-4050afe73e64"), HttpStatus.OK);
+        return new ResponseEntity<>(new UserRest("OK", "iFegal","b366c220-1aac-44c3-ab53-bca89e839b7a"), HttpStatus.OK);
     }
 
 

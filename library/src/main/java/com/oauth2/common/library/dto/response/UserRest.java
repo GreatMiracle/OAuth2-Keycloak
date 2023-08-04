@@ -1,4 +1,4 @@
-package com.oauth2.keycloak.resourceserver.dto.response;
+package com.oauth2.common.library.dto.response;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
