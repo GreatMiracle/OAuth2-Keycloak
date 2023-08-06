@@ -3,9 +3,16 @@ server:
 
 
 spring:
+  application:
+    name: photo-service
   security:
     oauth2:
       resourceserver:
         jwt:
           issuer-uri: http://localhost:${KEYCLOAK_PORT_HOST:28080}/auth/realms/realm2nd
           jwk-set-uri: http://localhost:${KEYCLOAK_PORT_HOST:28080}/auth/realms/realm2nd/protocol/openid-connect/certs
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8010/eureka/
