@@ -1,0 +1,28 @@
+
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: YOUR_GOOGLE_CLIENT_ID
+            client-secret: YOUR_GOOGLE_CLIENT_SECRET
+          facebook:
+            client-id: YOUR_FACEBOOK_CLIENT_ID
+            client-secret: YOUR_FACEBOOK_CLIENT_SECRET
+          github:
+            client-id: YOUR_GITHUB_CLIENT_ID
+            client-secret: YOUR_GITHUB_CLIENT_SECRET
+          okta:
+            client-id: 6KG8pAXg7g5lr1KNaljy7NZJeeB8gfqQ
+            client-secret: 4FScr6mt7HH2EyvS-X5F4sUEuEbxa5VZkH8n5vFxrjS-ipFx83I_GF3HYv89d6Io
+            scope:
+              - openid
+              - profile
+              - email
+        provider:
+          okta:
+            issuer-uri: https://dev-iholenvxnhu5touq.us.auth0.com/
+server:
+  port: 8095

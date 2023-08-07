@@ -1,7 +1,6 @@
 package com.app.photowebclient.configs;
 
 import jakarta.annotation.PostConstruct;
-import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
@@ -28,7 +27,7 @@ public class WebClientConfig implements BeanFactoryAware {
     }
 
     @Override
-    public void setBeanFactory(@NotNull BeanFactory beanFactory) throws BeansException {
+    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
         this.beanFactory = beanFactory;
     }
 
