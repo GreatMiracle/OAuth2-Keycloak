@@ -2,6 +2,31 @@
 server:
   port: 8094
 
+app-webclient:
+  webclients:
+    - { beanName: "albumsWebClient", baseUrl: "http://localhost:8092/albums", headers: { } }
+
+
 spring:
   application:
     name: app-photo-web-client
+
+  security:
+    oauth2:
+      client:
+        registration:
+          mywebclient:
+            client-id: photo-app-webclient
+            client-secret: 5Oa4ytHSGMYIDiJqvtW3FbUnxNpjIDYy
+            scope: openid, profile, roles
+            authorization-grant-type: ${KEYCLOAK_AUTHORIZATION_GRANT_TYPE:authorization_code}
+            redirect-uri: http://localhost:8094/login/oauth2/code/mywebclient
+#            redirect-uri: ${KEYCLOAK_REDIRECT_URI:http://localhost:3000}
+
+        provider:
+          mywebclient:
+            authorization-uri: ${KEYCLOAK_PORT_HOST_URL:http://localhost:28080}/auth/realms/${KEYCLOAK_REALM:realm2nd}/protocol/openid-connect/auth
+            token-uri: ${KEYCLOAK_PORT_HOST_URL:http://localhost:28080}/auth/realms/${KEYCLOAK_REALM:realm2nd}/protocol/openid-connect/token
+            jwk-set-uri: ${KEYCLOAK_PORT_HOST_URL:http://localhost:28080}/auth/realms/${KEYCLOAK_REALM:realm2nd}/protocol/openid-connect/certs
+            user-info-uri: ${KEYCLOAK_PORT_HOST_URL:http://localhost:28080}/auth/realms/${KEYCLOAK_REALM:realm2nd}/protocol/openid-connect/userinfo
+            user-name-attribute: preferred_username

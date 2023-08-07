@@ -8,15 +8,15 @@
 </head>
 <body>
 <h1>Albums page: </h1>
-<div th:text="${albums}"></div>
-<!--<div th:if="${albums.empty}">-->
-<!--    <div>No albums found</div>-->
-<!--</div>-->
-
-<!--<div th:each="album : ${albums}">-->
-<!--    <p><span th:text="${album.albumTitle}"></span></p>-->
-<!--</div>-->
 <span>kien</span>
+<!--<div th:text="${albums}"></div>-->
+<div th:if="${albums.empty}">
+    <div>No albums found</div>
+</div>
+
+<div th:each="album : ${albums}">
+    <p><span th:text="${album.albumTitle}"></span></p>
+</div>
 
 </body>
 </html>
