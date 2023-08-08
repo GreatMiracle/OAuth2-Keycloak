@@ -2,6 +2,7 @@ package com.app.clients.sociallogin.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -15,6 +16,7 @@ public class WebSecurity {
     ClientRegistrationRepository clientRegistrationRepository;
 
     @Bean
+    @Order
     SecurityFilterChain configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .requestMatchers("/").permitAll()
@@ -29,12 +31,13 @@ public class WebSecurity {
                 .deleteCookies("JSESSIONID");
         ;
         return http.build();
+
     }
 
     private OidcClientInitiatedLogoutSuccessHandler oidcLogoutSuccessHandler() {
         OidcClientInitiatedLogoutSuccessHandler successHandler =
                 new OidcClientInitiatedLogoutSuccessHandler(clientRegistrationRepository);
-        successHandler.setPostLogoutRedirectUri("http://localhost:8080/");
+        successHandler.setPostLogoutRedirectUri("http://localhost:8095/");
         return successHandler;
     }
 
